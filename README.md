@@ -28,30 +28,30 @@ docker push my-nginx
 
 helm install my-release ./wordpress-chart
 
-### Cleanup
+- Cleanup
 
 helm delete my-release
 
-### Monitoring and Alerting
-####Deploy Prometheus and Grafana
+- Monitoring and Alerting
+#Deploy Prometheus and Grafana
 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 helm install prometheus prometheus-community/kube-prometheus-stack
 
-####Apply Prometheus Rules
+#Apply Prometheus Rules
 
 kubectl apply -f monitoring/nginx-prometheus-rules.yaml
 
-#Metrics
-##Nginx Metrics
-###Total Request Count
-###Total 5xx Request Count
-##Pod Metrics
-###Pod CPU Utilization
+# Metrics
+-Nginx Metrics
+--Total Request Count
+--Total 5xx Request Count
+-Pod Metrics
+--Pod CPU Utilization
 
 #License
-##This project is licensed under the MIT License.
+This project is licensed under the MIT License.
 
 
 This setup provides a complete solution to deploy a production-grade WordPress application on Kubernetes, with monitoring and alerting in place using Prometheus and Grafana.
