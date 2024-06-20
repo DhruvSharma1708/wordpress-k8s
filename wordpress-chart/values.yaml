@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: my-wordpress
+  tag: latest
+
+mysql:
+  image:
+    repository: my-mysql
+    tag: latest
+  rootPassword: rootpassword
+  database: wordpress
+  user: wordpress
+  password: wordpresspassword
+
+nginx:
+  image:
+    repository: my-nginx
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
